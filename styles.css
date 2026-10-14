@@ -1,0 +1,548 @@
+/**
+Palette: https://scrimba.com/links/hometown-palette
+RED: #E63946
+LIGHT: #F1FAEE
+AQUA: #A8DADC
+LIGHT BLUE: #457B9D
+DARK BLUE: #1D3557
+
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, p {
+    font-family: "Montserrat", sans-serif;
+    color: #1F1F1F;
+    margin: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 75px 0px 75px 0px;
+    background-color: white;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20px;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.5),
+                        rgba(255, 255, 255, 0.5)),
+        url("images/camden-maine.avif");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+#border {
+    width: 1200px;
+    margin: 0 auto 10px;
+    
+    background-color: white;
+    
+    border: 20px solid white;
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+#hero {
+    background-image: url("images/camden-maine-2.avif");
+    background-size: cover;
+    width: 1200px;
+    height: 700px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    
+    overflow: hidden;
+    border-radius: 35px;
+    margin: 0 auto;
+}
+
+#navbar {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navitem {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    color: white;
+}
+
+#town-logo {
+    width: 125px;
+    background: rgba(20, 30, 35, 0.25);
+    backdrop-filter: blur(14px);
+    border-radius: 50%;
+}
+
+#navlinks {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+}
+
+#stayhome {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    
+    background-color: #C94C4C;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+#stayhome:hover {
+    animation: cartoon-fight 0.35s infinite;
+}
+
+@keyframes cartoon-fight {
+    0%   { transform: translate(0) scale(1); }
+    15%  { transform: translate(-12px, 8px) scaleX(1.4) scaleY(0.7) rotate(-8deg); }
+    30%  { transform: translate(14px, -10px) scaleX(0.7) scaleY(1.3) rotate(10deg); }
+    45%  { transform: translate(-8px, -14px) skewX(18deg) rotate(-12deg); }
+    60%  { transform: translate(16px, 12px) skewY(-15deg) rotate(9deg); }
+    75%  { transform: translate(-15px, 4px) scaleX(1.5) scaleY(0.65); }
+    90%  { transform: translate(10px, -6px) scaleX(0.8) scaleY(1.25); }
+    100% { transform: translate(0) scale(1); }
+}
+
+#hero-recommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: white;
+    width: fit-content;
+    align-self: flex-start;
+    margin: 375px 0px 0px 50px;
+    
+    background-color: #C94C4C;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+#header-lead {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+#the-recommendation {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#activities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: white;
+    padding-top: 100px;
+}
+
+.outlined-text-small {
+    width: fit-content;
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    
+    font-weight: 500;
+    
+    border: 1px solid #CED0D0;
+    border-radius: 20px;
+}
+
+.section-header-text {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.activity-detail {
+    display: flex;
+}
+
+.activity-lead-text {
+    margin-top: 30px;
+    width: 800px;
+}
+
+.activity-section {
+    width: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+    text-align: start;
+}
+
+.activity-track {
+    display: flex;
+    gap: 14px;
+    transition: transform 0.45s ease;
+}
+
+.activity-block {
+    flex: 0 0 240px;
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+
+.activity-section::-webkit-scrollbar {
+    display: none;
+}
+
+.activity-block.side-card {
+    opacity: 0.3;
+}
+
+.activity-img {
+    width: 240px;
+    height: 275px;
+    border-radius: 15px;
+    
+    object-fit: cover;
+}
+
+.activity-name {
+    
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.activity-descr {
+    width: 240px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #2B2B2B;
+}
+
+.carousel-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.carousel-buttons button {
+    width: 40px;
+    height: 40px;
+
+    background-color: white;
+    color: #2B2B2B;
+
+    border: 1px solid #CED0D0;
+    border-radius: 50%;
+
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.carousel-buttons button:hover {
+    background-color: #F2F2F2;
+    transform: scale(1.08);
+}
+
+#testimonials {
+  background-image: linear-gradient(
+            rgba(20, 30, 35, 0.65),
+            rgba(20, 30, 35, 0.65)
+        ),
+        url("images/camden-harbor.jpg");
+  background-size: cover;
+  width: 1200px;
+  height: 600px;
+  
+  border-radius: 35px;
+  margin-top: 100px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+
+#testimonial-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 120px 20px;
+    
+    gap: 10px;
+    text-align: start;
+}
+
+.testimonial-block {
+    background: linear-gradient(
+            rgba(20, 30, 35, 0.2),
+            rgba(20, 30, 35, 0.2)
+        );
+    backdrop-filter: blur(8px);
+    
+    height: 219px;
+    padding: 20px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    
+    flex: 1;
+}
+
+.testimonial-icon {
+    width: 50px;
+    margin: -10px 0px 65px 0px
+}
+
+.testimonial-name {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.testimonial-desc {
+    color: white;
+    font-size: 14px;
+}
+
+.testimonial-margin-top {
+    margin-top: 100px;
+    
+}
+
+.testimonial-margin-left {
+    margin-left: 20px;
+}
+
+#faqs {
+    background-size: cover;
+    width: 1200px;
+    height: 500px;
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    position: relative;
+    isolation: isolate;
+}
+
+#faqs::before {
+    margin-top: 100px;
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("images/camden-ship-v2.png") center / cover;
+    mask-image:
+        linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent),
+        linear-gradient(to bottom, transparent, black 100px, black calc(100% - 100px), transparent);
+    mask-composite: intersect;
+}
+
+#faq-grid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    margin-top: 50px;
+}
+
+.faq-grid-column {
+    margin: 0px 25px;
+    width: 500px;
+}
+
+.faq-grid-block {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.faq-icon {
+    height: 40px;
+    width: 40px;
+    
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px gainsboro;
+    
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.faq-grid-block-q-a {
+    text-align: start;
+}
+
+.faq-question {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.faq-answer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #2B2B2B; 
+}
+
+img {
+    width: 100px;
+    margin: 0px;
+}
+
+.white-text {
+  color: white;
+}
+
+.zero-top-margin {
+    margin-top: 0px;
+}
+
+#guide {
+    display: flex;
+    gap: 20px;
+    margin-top: 100px;
+    flex: 1;
+}
+
+.guide-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    
+    margin: auto;
+    text-align: center;
+    width: 590px;
+    height: 500px;
+}
+
+#guide-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+}
+
+#guide-quote {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 590px;
+    height: 369px;
+    margin-top: 30px;
+    border-radius: 35px;
+}
+
+#guide-quote::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    z-index: -1;
+
+    background:
+        linear-gradient(rgba(20, 30, 35, 0.65), rgba(20, 30, 35, 0.65)),
+        url("images/camden-harbor.jpg") center / cover;
+
+    filter: blur(8px);
+}
+
+#your-guide {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    
+    background-image: url("images/doubled.jpg");
+    background-size: cover;
+    background-position: 0px -240px;
+    height: 500px;
+    width: 590px;
+
+    border-radius: 35px;
+}
+
+#guide-name {
+    color: white;
+    margin: 420px 0px 0px 30px;
+    
+    font-weight: bold;
+    font-size: 26px;
+}
+
+#guide-desc {
+    color: white;
+    margin: 5px 0px 0px 30px;
+}
+
+#guide-icon {
+    width: 50px;
+    margin: 30px 0px 20px 30px
+}
+
+.guide-text {
+    color: white;
+    margin: 0px 30px;
+    text-align: start;
+
+}
+
+#site-disclaimer {
+    position: relative;
+    z-index: 1;
+
+    width: 1200px;
+
+    margin: 100px auto 0;
+    padding: 35px 60px;
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #C94C4C;
+    border-radius: 35px;
+
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.15);
+}
+
+#site-disclaimer p {
+    max-width: 900px;
+    margin: 0 auto;
+
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+#testimonials,
+#faqs,
+#guide {
+    scroll-margin-top: 100px;
+}
